@@ -15,6 +15,9 @@
 \usepackage[colorlinks=true, linkcolor=darkgray]{hyperref}
 \usepackage{needspace}
 \usepackage{textcase}
+\usepackage{graphicx}
+
+
 
 % --- Page config ---
 \geometry{a4paper, margin=1.6cm}
@@ -70,6 +73,12 @@
 \newenvironment{twocolumns}
     {\begin{multicols*}{2}}
     {\end{multicols*}}
+
+\newcommand{\fullpagestart}{\end{multicols*}}
+\newcommand{\fullpageend}{\begin{multicols*}{2}}
+
+% --- Images ---
+\setkeys{Gin}{width=1.0\linewidth}
 
 % --- Custom square box ---
 \newtcolorbox{squarebox}{

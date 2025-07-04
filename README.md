@@ -72,6 +72,30 @@ pandoc-latex-environment:
 ---
 ```
 
+## Adding Images
+
+- Place your images in the `images/` directory.
+- To add images, use the following syntax:
+```markdown
+![](images/filename.ext)
+```
+
+## Adding Full-Page elements
+
+- To add a full-page element, use the `fullpagestart` and `fullpageend` commands:
+```markdown
+\fullpagestart
+
+This is a full-page element. It will take up the entire page, breaking the two-column layout.
+
+| Header 1 | Header 2 | Header 3 | Header 4 | Header 5 | Header 6 | Header 7 | Header 8 | Header 9 |
+|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+| Item 1   | Item 2   | Item 3   | Item 4   | Item 5   | Item 6   | Item 7   | Item 8   | Item 9   |
+| Item 4   | Item 5   | Item 6   | Item 7   | Item 8   | Item 9   | Item 10  | Item 11  | Item 12  |
+| Item 7   | Item 8   | Item 9   | Item 10  | Item 11  | Item 12  | Item 13  | Item 14  | Item 15  |
+
+\fullpageend
+
 ## Custom Blocks
 
 - Use the `squarebox` class to create visually distinct boxes in your text:
