@@ -36,7 +36,7 @@ This project provides a modern workflow to create beautiful, two-column PDF docu
 
 ## Setup
 
-###1. Install [Pandoc](https://pandoc.org/installing.html) (Make sure Pandoc is available in your system’s PATH.)
+1. Install [Pandoc](https://pandoc.org/installing.html) (Make sure Pandoc is available in your system’s PATH.)
 2. Install LaTeX
     - **Linux**: Install TeX Live or another LaTeX distribution.
       ```
@@ -68,7 +68,7 @@ author: Name of the Author
 toc: false
 # Mandatory fields. Please do not remove.
 pandoc-latex-environment:
-  graybox: [graybox]
+  squarebox: [squarebox]
 ---
 ```
 
@@ -82,6 +82,7 @@ pandoc-latex-environment:
 
 ## Adding Full-Page elements
 
+- Be cautious with full-page elements, as they will break the two-column layout and start a new page.
 - To add a full-page element, use the `fullpagestart` and `fullpageend` commands:
 ```markdown
 \fullpagestart
@@ -95,6 +96,7 @@ This is a full-page element. It will take up the entire page, breaking the two-c
 | Item 7   | Item 8   | Item 9   | Item 10  | Item 11  | Item 12  | Item 13  | Item 14  | Item 15  |
 
 \fullpageend
+```
 
 ## Custom Blocks
 
@@ -155,13 +157,15 @@ From the project root, run:
 
 1. Run the following command to build the .html file
 ```
-pandoc example.md --no-highlight --template=tex/template.tex --pdf-engine=xelatex --filter pandoc-latex-environment --lua-filter=filters/filters.lua -o output/demo.pdf
+pandoc main.md --no-highlight --template=tex/template.tex --pdf-engine=xelatex --filter pandoc-latex-environment --lua-filter=filters/filters.lua -o output/main.pdf
 ```
 
 ## Helpful Tips
 - Images: Place all images in input/images/ and reference them as images/filename.ext in your Markdown.
 - Adversaries and custom blocks: Use the provided YAML/Markdown syntax for easy entry and automatic styling.
 - Troubleshooting: If you get errors, ensure Pandoc and LaTeX are correctly installed and that your image paths are correct.
+- Sometimes special characters in tables (like `#`, `&`, etc.) can cause issues. If you encounter problems, try escaping them with double backslash (`\\#`).
+- Use the example.md file as a reference for formatting and structure.
 
 ## What Does This Project Actually Do?
 Transforms your Markdown campaign into a styled, printable PDF with two columns, custom adversary boxes, and flexible image placement.
@@ -174,7 +178,7 @@ This project is licensed under the **GNU General Public License, version 3** (or
 
 For more details, see the [full license text](https://www.gnu.org/licenses/gpl-3.0.html).
 
-This template uses:
+### This template uses:
 - Montserrat font (Google Fonts, SIL Open Font License)
 - Merriweather font (Google Fonts, SIL Open Font License)
 - Eveleth Clean Regular (commercial font, not included—users must provide their own licensed copy).
