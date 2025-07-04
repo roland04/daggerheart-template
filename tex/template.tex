@@ -16,6 +16,8 @@
 \usepackage{needspace}
 \usepackage{textcase}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
 
 
 
@@ -71,18 +73,17 @@
 \setlength{\parskip}{0.5em}
 
 \newenvironment{twocolumns}
-    {\begin{multicols*}{2}}
+    {\begin{multicols*}{2}\raggedcolumns}
     {\end{multicols*}}
 
 \newcommand{\fullpagestart}{\end{multicols*}}
-\newcommand{\fullpageend}{\begin{multicols*}{2}}
+\newcommand{\fullpageend}{\begin{multicols*}{2}\raggedcolumns}
 
 % --- Images ---
 \setkeys{Gin}{width=1.0\linewidth}
 
 % --- Custom square box ---
 \newtcolorbox{squarebox}{
-    breakable,
     colback=gray!7,
     enhanced,
     frame hidden,
@@ -92,8 +93,8 @@
     right=.75em,
     top=.75em,
     bottom=.75em,
-    before skip=1em,
-    after skip=1em,
+    before skip=2em,
+    after skip=2em,
     sharp corners,
 }
 
@@ -154,12 +155,15 @@
     \oldsection{#1}
     \vspace{1em}
     \begin{multicols*}{2}
+    \raggedcolumns
 }
 
 % --- Lists ---
 \providecommand{\tightlist}{%
     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
 }
+\setlength{\leftmargini}{1em}
+\setlength{\leftmarginii}{1em}
 
 % --- Shaded environment ---
 \definecolor{shadecolor}{RGB}{248,248,248}
