@@ -199,6 +199,18 @@ The abbey is the heart of the mystery. Here the curse began, and here lies the k
 
 The abbey stands atop a low hill, its stone walls blackened by fire. The roof has collapsed in places, and the stained glass windows are shattered. Vines and moss creep over the stones, and the air is thick with the scent of damp earth and decay.
 
+::: environment
+name: The Silver Fen
+type: Enchanted Marsh
+description: A sprawling wetland blanketed in luminous silver mist, where even moonlight is diffused and reality seems to blur.
+impulses: Isolate wanderers, reveal illusions, protect ancient secrets
+difficulty: 13
+adversaries: mist drake, fen specter
+features:
+  - Illusive Light: The mist bends light, creating phantom bridges and false clearings.
+  - Mistbound: Creatures native to the fen can vanish and reappear at will within the fog.
+:::
+
 ## 3.1 Exploring the Ruins
 
 The abbey is divided into several zones: the crypt, the sacristy, the bell tower, and a hidden cellar. Each offers different challenges and rewards. Describe the decay, strange symbols on the walls, and the constant feeling of being watched.

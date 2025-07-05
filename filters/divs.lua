@@ -151,4 +151,59 @@ function Div(elem)
 
         return pandoc.RawBlock("latex", latex)
     end
+    if elem.classes:includes('environment') then
+        -- Extract the content as YAML text with newlines
+        local yaml_text = ""
+        for _, block in ipairs(elem.content) do
+            if block.t == "Para" then
+                yaml_text = yaml_text .. para_to_yaml(block) .. "\n"
+            elseif block.t == "Plain" then
+                yaml_text = yaml_text .. para_to_yaml({content = block.content}) .. "\n"
+            end
+        end
+
+        -- Parse the YAML content to a Lua table
+        local data = parse_yaml(yaml_text)
+        if not data then return end
+
+        -- Clean all main fields
+        local name = clean_latex(data.name or "")
+        local env_type = clean_latex(data.type or "")
+        local description = clean_latex(data.description or "")
+        local impulses = clean_latex(data.impulses or "")
+        local difficulty = clean_latex(data.difficulty or "")
+        local adversaries = clean_latex(data.adversaries or "")
+
+        -- Generate the features list
+        local features_latex = ""
+        if data.features then
+            if type(data.features) == "table" then
+                if #data.features > 0 then
+                    features_latex = "\\eveleth\\fontsize{10pt}{10pt}\\selectfont\\MakeTextUppercase{Features}\n"
+                    features_latex = features_latex .. "\\par\\smallskip\n"
+                    features_latex = features_latex .. "\\normalfont\\fontsize{8pt}{8pt}\\selectfont\n"
+                    features_latex = features_latex .. "\\begin{itemize}[leftmargin=0em, itemsep=3pt, parsep=4pt]\n"
+                    features_latex = features_latex .. "\\renewcommand{\\labelitemi}{}\n"
+                    for _, f in ipairs(data.features) do
+                        features_latex = features_latex .. "\\item " .. process_namevalue(f) .. "\n"
+                    end
+                    features_latex = features_latex .. "\\end{itemize}\n"
+                end
+            else
+                features_latex = "\\item " .. process_namevalue(data.features) .. "\n"
+            end
+        end
+
+        -- Generate the main attributes block
+        local environmentinnerbox_latex = "\\textbf{Difficulty:} " .. difficulty .. " | " ..
+            "\\textbf{Potential adversaries:} " .. adversaries .. "\n\\par\\smallskip\n\n"
+
+        -- Build the LaTeX command with cleaned arguments
+        local latex = string.format(
+            "\\environment{%s}{%s}{%s}{%s}{%s}{%s}",
+            name, env_type, description, impulses, environmentinnerbox_latex, features_latex
+        )
+
+        return pandoc.RawBlock("latex", latex)
+    end
 end

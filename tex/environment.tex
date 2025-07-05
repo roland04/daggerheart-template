@@ -1,0 +1,67 @@
+% --- Packages ---
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% --- Colors ---
+\definecolor{bordercolor}{HTML}{bcab84}
+\definecolor{bgcolor}{HTML}{f4f0e5}
+
+% --- Main Box ---
+\newtcolorbox{environmentbox}[1]{
+    enhanced,
+    colframe=white,
+    arc=5pt,
+    boxrule=1pt,
+    outer arc=5pt,
+    before skip=2em,
+    after skip=2em,
+    top=8pt,
+    left=8pt,
+    right=8pt,
+    bottom=8pt,
+    before upper={\parskip=4pt},
+}
+
+% --- Inner box ---
+\newtcolorbox{environmentinnerbox}{
+    colback=white,
+    enhanced,
+    frame hidden,
+    borderline north={1pt}{0pt}{bordercolor},
+    borderline south={1pt}{0pt}{bordercolor},
+    left=0.5em,
+    right=0.5em,
+    top=0.5em,
+    bottom=0.5em,
+    before skip=1em,
+    after skip=1em,
+    sharp corners,
+}
+
+\newcommand{\environment}[6]{%
+    \begin{environmentbox}{}%
+        {\color{maintext}%
+            \eveleth\fontsize{12pt}{12pt}\selectfont\MakeTextUppercase{#1}
+            \par\smallskip
+
+            \normalfont\fontsize{8pt}{8pt}\selectfont
+            \textbf{\emph{#2}}
+            \par\smallskip
+
+            \emph{#3}
+            \par\smallskip
+
+            \textbf{Impulses:} #4
+            \par\smallskip
+
+            \begin{environmentinnerbox}
+                #5
+            \end{environmentinnerbox}
+            \par\smallskip
+
+            #6
+        }%
+    \end{environmentbox}%
+}
