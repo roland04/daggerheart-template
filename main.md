@@ -6,4 +6,5 @@ toc: false
 # Mandatory fields. Please do not remove.
 pandoc-latex-environment:
   squarebox: [squarebox]
+  roundedbox: [roundedbox]
 ---

@@ -69,6 +69,7 @@ toc: false
 # Mandatory fields. Please do not remove.
 pandoc-latex-environment:
   squarebox: [squarebox]
+  roundedbox: [roundedbox]
 ---
 ```
 
@@ -105,6 +106,15 @@ This is a full-page element. It will take up the entire page, breaking the two-c
 ```markdown
 ::: squarebox
 **This is a box title**
+This is a quote from a character in the campaign. *It should be visually distinct from the rest of the text*, perhaps with a different font or style.
+:::
+```
+
+- For rounded boxes, use the `roundedbox` class:
+
+```markdown
+::: roundedbox
+**This is a rounded box title**
 This is a quote from a character in the campaign. *It should be visually distinct from the rest of the text*, perhaps with a different font or style.
 :::
 ```

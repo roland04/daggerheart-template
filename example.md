@@ -6,6 +6,7 @@ toc: true
 # Mandatory fields. Please do not remove.
 pandoc-latex-environment:
   squarebox: [squarebox]
+  roundedbox: [roundedbox]
 ---
 
 # Prologue
@@ -66,14 +67,21 @@ The "Smoking Lantern" inn is the social heart of Mistvale. Here, the characters 
 
 The inn is dimly lit, with a large hearth fire and a handful of battered tables. The air is thick with the smell of smoke, damp wool, and stew. Most villagers keep to themselves, speaking in low voices and glancing nervously at the newcomers. The innkeeper, Mirta, does her best to maintain a cheerful facade, but her eyes betray her worry.
 
+::: roundedbox
+**OPTIONAL REST ACTION**
+
+The inn offers a place to rest and recover. Characters can spend time here to regain Will or heal minor wounds. However, the atmosphere is oppressive, and sleep may be troubled by nightmares or strange dreams related to the fog.
+:::
+
 The atmosphere is tense and conversations are brief and evasive. Villagers avoid speaking of the abbey or the disappearances, but a child approaches and hands the characters a cold iron amulet, saying he found it near the dry well. This object will be important later.
 
-- **Rumors available at the inn:**
-  - "The fog has never lifted since the fire at the abbey."
-  - "People vanish on the new moon. Some say the woods take them."
-  - "The priest is not what he seems."
-  - "If you hear singing in the fog, run."
-  - "The old well is cursed. Don't go near it after dark."
+**Rumors available at the inn:**
+
+- "The fog has never lifted since the fire at the abbey."
+- "People vanish on the new moon. Some say the woods take them."
+- "The priest is not what he seems."
+- "If you hear singing in the fog, run."
+- "The old well is cursed. Don't go near it after dark."
 
 ::: squarebox
 **Inn Scene**
@@ -407,9 +415,9 @@ weapons:
   - Silent Scream: Area | 2d8 (Psychic)
 experience: Forbidden Wisdom +5
 features:
-  - Immune to non-magical weapons.
-  - Each time it deals damage, it heals 2 HP.
-  - Can possess a character for 1 turn (hard save).
+  - Ethereum: Immune to non-magical weapons.
+  - Regeneration: Each time it deals damage, it heals 2 HP.
+  - Possesion: Can possess a character for 1 turn (hard save).
 :::
 
 The fight should be epic and terrifying. If the characters fail, the Voice may escape and spread the fog elsewhere. If they succeed, they may free the village, but not without paying a price.
@@ -537,6 +545,5 @@ Winning the trust of Mistvale’s people can open doors and reveal secrets. The 
 | 19 | Ornate Lockbox (locked)              | Container      | Small, sturdy box with intricate carvings (lock DC 15).                                         | Contains a random minor treasure.                      |
 | 20 | Cloak of the Common Folk             | Magic Item     | Grants advantage on Deception checks to blend in with crowds.                                   | Looks plain but is always clean.                       |
 | 21 | Bag of Holding (Tiny)                | Magic Item     | Can store up to 50 lbs. of items, but only small objects fit.                                   | -                                                      |
-
 
 \fullpageend

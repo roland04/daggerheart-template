@@ -24,6 +24,7 @@
 % --- Page config ---
 \geometry{a4paper, margin=1.6cm}
 \setlength{\columnsep}{1.5em}
+\newcommand{\pandocbounded}[2]{#2}
 
 % --- Fonts ---
 \renewcommand{\normalsize}{\fontsize{8.5}{10}\selectfont}
@@ -55,6 +56,7 @@
 % --- Colors ---
 \definecolor{maintext}{HTML}{444444}
 \definecolor{boxbg}{HTML}{ebf0f1}
+\definecolor{roundedbg}{HTML}{e1eaed}
 \definecolor{boxborder}{HTML}{2d4d63}
 \definecolor{quoteborder}{HTML}{deb334}
 \definecolor{h4square}{HTML}{deb334}
@@ -98,9 +100,22 @@
     sharp corners,
 }
 
+% --- Custom rounded box ---
+\newtcolorbox{roundedbox}{
+    colback=roundedbg,
+    enhanced,
+    frame hidden,         % Alternativamente, puedes usar boxrule=0pt
+    arc=6pt,              % Controla el radio de las esquinas redondeadas
+    left=.75em,
+    right=.75em,
+    top=.75em,
+    bottom=.75em,
+    before skip=2em,
+    after skip=2em,
+}
+
 % --- Blockquote ---
 \newtcolorbox{quotebox}{
-    breakable,
     colback=white,
     enhanced,
     frame hidden,
